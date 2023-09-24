@@ -15,6 +15,10 @@ public class LibraryAppApplication {
         SpringApplication.run(LibraryAppApplication.class, args);
     }
 
+    @GetMapping("/")
+    public String hello(){
+        return "Homepage!";
+    }
     @GetMapping("/hello")
     public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
