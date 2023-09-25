@@ -10,9 +10,7 @@ import java.util.Objects;
 @Entity
 public class Client {
 
-    /**
-     * Instance variables
-     */
+    // Instance variables
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -20,9 +18,7 @@ public class Client {
     private String username;
     private String password;
 
-    /**
-     * Constructor
-     */
+    // Constructor
     public Client() {
 
     }
@@ -46,9 +42,7 @@ public class Client {
         return id != null ? id.hashCode() : 0;
     }
 
-    /**
-     * Setters and Getters
-     */
+    // Setters and Getters
     public void setId(Long id) {
         this.id = id;
     }

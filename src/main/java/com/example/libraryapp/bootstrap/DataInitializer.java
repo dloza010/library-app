@@ -1,36 +1,75 @@
 package com.example.libraryapp.bootstrap;
 
+import com.example.libraryapp.entity.Book;
 import com.example.libraryapp.entity.Client;
-import com.example.libraryapp.repositories.LibraryRepository;
+import com.example.libraryapp.repositories.BookRepository;
+import com.example.libraryapp.repositories.ClientRepository;
+import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
 
-    private final LibraryRepository libraryRepository;
-
-    public DataInitializer(LibraryRepository libraryRepository){
-        this.libraryRepository = libraryRepository;
+    private final ClientRepository clientRepository;
+    private final BookRepository bookRepository;
+    private List<Client> clientList = new ArrayList<>();
+    private List<Book> bookList = new ArrayList<>();
+    public DataInitializer(ClientRepository clientRepository, BookRepository bookRepository){
+        this.clientRepository = clientRepository;
+        this.bookRepository = bookRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
-        Client clientDDD = new Client( "david", "dlz", "password");
 
-        System.out.println("Id: " + clientDDD.getId());
+        clientSeeder(3, this.clientList, this.clientRepository);
+        bookSeeder(10, this.bookList, this.bookRepository);
+    }
 
-        Client savedDDD = libraryRepository.save(clientDDD);
+    private static void clientSeeder(
+            int numOfClients,
+            List<Client> clientList,
+            ClientRepository clientRepository
+    ){
 
-        System.out.println("Id: " + savedDDD.getId());
+        Faker faker = new Faker();
 
-        Client clientSIA = new Client("lucas", "dlz", "password1");
-        Client savedSIA = libraryRepository.save(clientSIA);
+        for (int i = 0; i < numOfClients; i++){
+            String name = faker.name().firstName();
+            String  username = faker.name().username();
+            String password = faker.internet().password();
 
-        libraryRepository.findAll().forEach(client -> {
-            System.out.println("User first name: " + client.getName());
-            System.out.println("Username: " +  client.getUsername());
-        });
+            Client client = new Client(name, username, password);
+            clientList.add(client);
+        }
+
+        clientRepository.saveAll(clientList);
+
+    }
+
+    private static void bookSeeder(
+            int numOfBooks,
+            List<Book> bookList,
+            BookRepository bookRepository
+    ){
+
+        Faker faker = new Faker();
+
+        for (int i = 0; i < numOfBooks; i++){
+            String title = faker.book().title();
+            int quantity = faker.number().numberBetween(1, 20);
+            int releaseYear = faker.number().numberBetween(1990, 2010);
+            String author = faker.book().author();
+
+            Book book = new Book(title, quantity, releaseYear, author);
+            bookList.add(book);
+        }
+
+        bookRepository.saveAll(bookList);
+
     }
 }
 
