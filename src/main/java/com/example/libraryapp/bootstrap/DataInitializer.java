@@ -24,7 +24,7 @@ public class DataInitializer implements CommandLineRunner {
 
         System.out.println("Id: " + savedDDD.getId());
 
-        Client clientSIA = new Client("juan", "dlz", "password1");
+        Client clientSIA = new Client("lucas", "dlz", "password1");
         Client savedSIA = libraryRepository.save(clientSIA);
 
         libraryRepository.findAll().forEach(client -> {
