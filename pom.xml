@@ -38,6 +38,11 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <artifactId>java-dotenv</artifactId>
+            <groupId>io.github.cdimascio</groupId>
+            <version>5.2.2</version>
+        </dependency>
     </dependencies>
 
     <build>
