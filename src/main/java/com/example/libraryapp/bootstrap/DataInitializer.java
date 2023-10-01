@@ -1,7 +1,7 @@
 package com.example.libraryapp.bootstrap;
 
-import com.example.libraryapp.entity.Book;
-import com.example.libraryapp.entity.Client;
+import com.example.libraryapp.entity.Book.Book;
+import com.example.libraryapp.entity.Client.Client;
 import com.example.libraryapp.repositories.BookRepository;
 import com.example.libraryapp.repositories.ClientRepository;
 import com.github.javafaker.Faker;
