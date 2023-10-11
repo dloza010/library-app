@@ -15,8 +15,8 @@ public class DataInitializer implements CommandLineRunner {
 
     private final ClientRepository clientRepository;
     private final BookRepository bookRepository;
-    private List<Client> clientList = new ArrayList<>();
-    private List<Book> bookList = new ArrayList<>();
+    private final List<Client> clientList = new ArrayList<>();
+    private final List<Book> bookList = new ArrayList<>();
     public DataInitializer(ClientRepository clientRepository, BookRepository bookRepository){
         this.clientRepository = clientRepository;
         this.bookRepository = bookRepository;
@@ -24,12 +24,12 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
         clientSeeder(3, this.clientList, this.clientRepository);
-        bookSeeder(10, this.bookList, this.bookRepository);
+        bookSeeder(5, this.bookList, this.bookRepository, 1L);
+        bookSeeder(5, this.bookList, this.bookRepository, 2L);
     }
 
-    private static void clientSeeder(
+    private void clientSeeder(
             int numOfClients,
             List<Client> clientList,
             ClientRepository clientRepository
@@ -38,11 +38,13 @@ public class DataInitializer implements CommandLineRunner {
         Faker faker = new Faker();
 
         for (int i = 0; i < numOfClients; i++){
-            String name = faker.name().firstName();
             String  username = faker.name().username();
             String password = faker.internet().password();
+            String name = faker.name().firstName();
+            String email = faker.internet().emailAddress();
+            String address = faker.address().streetAddress();
 
-            Client client = new Client(name, username, password);
+            Client client = new Client(username, password, name, email, address);
             clientList.add(client);
         }
 
@@ -50,10 +52,11 @@ public class DataInitializer implements CommandLineRunner {
 
     }
 
-    private static void bookSeeder(
+    private void bookSeeder(
             int numOfBooks,
             List<Book> bookList,
-            BookRepository bookRepository
+            BookRepository bookRepository,
+            Long clientId
     ){
 
         Faker faker = new Faker();
@@ -63,8 +66,11 @@ public class DataInitializer implements CommandLineRunner {
             int quantity = faker.number().numberBetween(1, 20);
             int releaseYear = faker.number().numberBetween(1990, 2010);
             String author = faker.book().author();
+            Client client = clientRepository.findById(clientId).orElseThrow(
+                    () -> new IllegalArgumentException("Client not found with ID: " + clientId)
+            );
 
-            Book book = new Book(title, quantity, releaseYear, author);
+            Book book = new Book(title, quantity, releaseYear, author, client);
             bookList.add(book);
         }
 

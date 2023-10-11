@@ -1,9 +1,7 @@
 package com.example.libraryapp.entity.Book;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.libraryapp.entity.Client.Client;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
@@ -18,6 +16,9 @@ public class Book {
     private int quantity;
     private int releaseYear;
     private String author;
+    @ManyToOne
+    @JoinColumn(name="client_id", referencedColumnName = "id")
+    private Client client;
 
     @Override
     public boolean equals(Object o) {
@@ -37,11 +38,12 @@ public class Book {
 
     }
 
-    public Book(String title, int quantity, int releaseYear, String author) {
+    public Book(String title, int quantity, int releaseYear, String author, Client client) {
         this.title = title;
         this.quantity = quantity;
         this.releaseYear = releaseYear;
         this.author = author;
+        this.client = client;
     }
 
     //Setters and Getters

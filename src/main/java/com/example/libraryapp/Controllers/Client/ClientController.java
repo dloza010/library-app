@@ -32,16 +32,19 @@ public class ClientController {
     }
 
     @PostMapping("")
-    public ResponseEntity<Client> createClient(@RequestBody Client client) {
+    public ResponseEntity<?> createClient(@RequestBody Client client) {
+        if (!client.validate()){
+            return ResponseEntity.badRequest().body("Both username and password must be entered.");
+        }
         Client savedClient = clientRepository.save(client);
         return new ResponseEntity<>(savedClient, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Client> deleteClient(@PathVariable("id") Long id){
+    public ResponseEntity<Client> deleteClient(@PathVariable("id") Long id) {
         Client client = clientRepository.findById(id).orElse(null);
 
-        if (client == null){
+        if (client == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
