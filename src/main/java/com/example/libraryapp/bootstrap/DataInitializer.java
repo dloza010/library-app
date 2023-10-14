@@ -63,8 +63,9 @@ public class DataInitializer implements CommandLineRunner {
             int quantity = faker.number().numberBetween(1, 20);
             int releaseYear = faker.number().numberBetween(1990, 2010);
             String author = faker.book().author();
+            String genre = faker.book().genre();
 
-            Book book = new Book(title, quantity, releaseYear, author);
+            Book book = new Book(title, quantity, releaseYear, author, genre);
             bookList.add(book);
         }
 

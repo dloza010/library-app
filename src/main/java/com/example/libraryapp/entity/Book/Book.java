@@ -18,6 +18,7 @@ public class Book {
     private int quantity;
     private int releaseYear;
     private String author;
+    private String genre;
 
     @Override
     public boolean equals(Object o) {
@@ -37,11 +38,12 @@ public class Book {
 
     }
 
-    public Book(String title, int quantity, int releaseYear, String author) {
+    public Book(String title, int quantity, int releaseYear, String author, String genre) {
         this.title = title;
         this.quantity = quantity;
         this.releaseYear = releaseYear;
         this.author = author;
+        this.genre = genre;
     }
 
     //Setters and Getters
@@ -84,4 +86,19 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    // @Override
+    // public int compareTo(Book a) {
+    //     if(a.getTitle().compareTo(a.getTitle()) != 0)
+    //         return a.getTitle().compareTo(a.getTitle());		    
+    // else return 0;
+    // }
 }
