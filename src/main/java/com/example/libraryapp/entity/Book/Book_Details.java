@@ -1,87 +1,132 @@
 package com.example.libraryapp.entity.Book;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.Flow;
 
 @Entity
-public class Book {
-
+public class Book_Details {
     //Instance Variables
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    //To impose data type definition of varchar(17) in the database
+    //@Column(columnDefinition="varchar(17)")
+    @Column(nullable = false)
+    private long ISBN;
+
     private String title;
-    private int quantity;
-    private int releaseYear;
-    private String author;
+    private String description;
+    private double price;
+    private String genre;
+    private int year_published;
+    private int copies_sold;
+    //private int created_at;
+    @ManyToOne()
+    @JoinColumn(name="publisher_id")
+    private Publisher publisher;
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return Objects.equals(id, book.id);
+        Book_Details book = (Book_Details) o;
+        return Objects.equals(ISBN, book.ISBN);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(ISBN);
     }
 
-    //Constructor
-    public Book() {
+    //Constructors
+    public Book_Details() {
 
     }
 
-    public Book(String title, int quantity, int releaseYear, String author) {
+
+    public Book_Details(long ISBN, String title, String description, double price, String genre, int year_published, int copies_sold, Publisher publisher) {
+        this.ISBN = ISBN;
+        //this.first_name = first_name;
+        //this.last_name = last_name;
         this.title = title;
-        this.quantity = quantity;
-        this.releaseYear = releaseYear;
-        this.author = author;
+        this.description = description;
+        this.price = price;
+        this.genre = genre;
+        this.year_published = year_published;
+        this.copies_sold = copies_sold;
+        //this.created_at = created_at;
+        this.publisher = publisher;
     }
 
     //Setters and Getters
-    public Long getId() {
-        return id;
+
+    public long getISBN() {
+        return ISBN;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setISBN(long ISBN) {
+        this.ISBN = ISBN;
     }
 
+    public String setTitle() {
+        return title;
+    }
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String name) {
-        this.title = name;
+    public String getDescription() {
+        return description;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public double getPrice() {
+        return price;
     }
 
-    public int getReleaseYear() {
-        return releaseYear;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public void setReleaseYear(int releaseYear) {
-        this.releaseYear = releaseYear;
+    public String getGenre() {
+        return genre;
     }
 
-    public String getAuthor() {
-        return author;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public int getYear_published() {
+        return year_published;
     }
+
+    public void setYear_published(int year_published) {
+        this.year_published = year_published;
+    }
+
+    public int getCopies_sold() {
+        return copies_sold;
+    }
+
+    public void setCopies_sold(int copies_sold) {
+        this.copies_sold = copies_sold;
+    }
+
+//    @ManyToOne(optional = false)
+//    private Book_Author_Intermediate book_author_intermediates;
+//
+//    public Book_Author_Intermediate getBook_author_intermediates() {
+//        return book_author_intermediates;
+//    }
+//
+//    public void setBook_author_intermediates(Book_Author_Intermediate book_author_intermediates) {
+//        this.book_author_intermediates = book_author_intermediates;
+//    }
 }

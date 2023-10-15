@@ -17,16 +17,18 @@ public class Client {
     private String name;
     private String username;
     private String password;
+    private boolean isAdmin;
 
     // Constructor
     public Client() {
 
     }
 
-    public Client(String name, String username, String password) {
+    public Client(String name, String username, String password, boolean isAdmin) {
         this.name = name;
         this.username = username;
         this.password = password;
+        this.isAdmin = isAdmin;
     }
 
     @Override
@@ -73,5 +75,13 @@ public class Client {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }
