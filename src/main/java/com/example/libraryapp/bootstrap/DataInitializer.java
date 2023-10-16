@@ -93,7 +93,7 @@ public class DataInitializer implements CommandLineRunner {
             //String first_name = String.valueOf(faker.name().firstName());
             //String last_name = String.valueOf(faker.name().lastName());
             String description = "N/A";
-            double price = faker.number().randomDouble(2,0,1999999999);
+            double price = Double.parseDouble(faker.commerce().price(0,50));
             String genre = faker.book().genre();
             String title = faker.book().title();
             //create a publisher name and add to db

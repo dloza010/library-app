@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1612401a-6914-4dc5-b794-24bc480ca4af" name="Changes" comment="Added extra route '/' and updated dependencies">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Client/BookDetailsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Author_Details.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book_Author_Intermediate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Publisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Author_Details_Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Book_Author_Intermediate_Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/PublisherRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book_Details.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/ClientController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/BookRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/ClientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/ClientRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +124,7 @@
       <workItem from="1695655932980" duration="5502000" />
       <workItem from="1695663810356" duration="784000" />
       <workItem from="1696117514789" duration="3802000" />
-      <workItem from="1697162065322" duration="32447000" />
+      <workItem from="1697162065322" duration="36763000" />
     </task>
     <task id="LOCAL-00001" summary="configuration setup to database">
       <option name="closed" value="true" />
