@@ -33,7 +33,6 @@ public class WishListController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-
         return new ResponseEntity<>(client, HttpStatus.OK);
     }
 
