@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 
 import java.util.Objects;
 
+
 @Entity
 public class Client {
 
@@ -17,16 +18,20 @@ public class Client {
     private String name;
     private String username;
     private String password;
+    private String emailAddress;
+    private String homeAddress;
 
     // Constructor
     public Client() {
 
     }
 
-    public Client(String name, String username, String password) {
+    public Client(String name, String username, String password, String emailAddress, String homeAddress) {
         this.name = name;
         this.username = username;
         this.password = password;
+        this.emailAddress = emailAddress;
+        this.homeAddress = homeAddress;
     }
 
     @Override
@@ -73,5 +78,19 @@ public class Client {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+    public String getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(String homeAddress) {
+        this.homeAddress = homeAddress;
     }
 }
