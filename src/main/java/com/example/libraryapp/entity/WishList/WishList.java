@@ -9,6 +9,7 @@ import jakarta.persistence.OneToOne;
 
 import java.util.Objects;
 
+import com.example.libraryapp.entity.Client.Client;
 import com.example.libraryapp.entity.WishList.WishList;
 
 @Entity
@@ -20,15 +21,17 @@ public class WishList {
     private Long wishListID;
 
     @OneToOne
-    @JoinColumn(name = "clientID")
-    private Long user;
+    @JoinColumn(name = "clientID", referencedColumnName = "id")
+    private Client user;
+    private Long userID;
 
     // Constructor
     public WishList() {
 
     }
-    public WishList(Long user) {
+    public WishList(Client user) {
         this.user = user;
+        this.userID = user.getId();
     }
 
 
@@ -53,5 +56,11 @@ public class WishList {
     public Long getwishListID() {
         return wishListID;
     }
+    public void setUserID(Long userID) {
+        this.userID = userID;
+    }
 
+    public Long getUserID() {
+        return userID;
+    }
 }

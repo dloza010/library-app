@@ -6,6 +6,8 @@ import com.example.libraryapp.entity.Client.Client;
 import com.example.libraryapp.repositories.BookRepository;
 import com.example.libraryapp.repositories.ClientRepository;
 import com.github.javafaker.Faker;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
@@ -16,21 +18,18 @@ import java.util.List;
 public class DataInitializer implements CommandLineRunner {
 
     //private static WishListRepository wishListRepository;
-    private static ClientRepository clientRepository;
-    private static BookRepository bookRepository;
+    @Autowired
+    private ClientRepository clientRepository;
+    @Autowired
+    private BookRepository bookRepository;
     private List<Client> clientList = new ArrayList<>();
     private List<Book> bookList = new ArrayList<>();
-    public DataInitializer(){
-      //  this.clientRepository = clientRepository;
-      //  this.bookRepository = bookRepository;
-        //this.wishListRepository = wishListRepository;
-    }
-
+    
     @Override
     public void run(String... args) throws Exception {
 
-        clientSeeder(3, this.clientList, DataInitializer.clientRepository);
-        bookSeeder(10, this.bookList, DataInitializer.bookRepository);
+        clientSeeder(3, this.clientList, clientRepository);
+        bookSeeder(10, this.bookList, bookRepository);
     }
 
     private static void clientSeeder(
@@ -79,11 +78,6 @@ public class DataInitializer implements CommandLineRunner {
         bookRepository.saveAll(bookList);
 
     }
-    /*public static WishList wishListInitializer(Long clientid){
-
-        WishList wishList = new WishList(clientid);
-        return wishListRepository.save(wishList);
-    }*/
 }
 
 
