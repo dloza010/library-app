@@ -2,7 +2,6 @@ package com.example.libraryapp.bootstrap;
 
 import com.example.libraryapp.entity.Book.Book;
 import com.example.libraryapp.entity.Client.Client;
-//import com.example.libraryapp.entity.WishList.WishList;
 import com.example.libraryapp.repositories.BookRepository;
 import com.example.libraryapp.repositories.ClientRepository;
 import com.github.javafaker.Faker;
@@ -12,12 +11,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
-//import com.example.libraryapp.repositories.WishListRepository;
+
 
 @Component
 public class DataInitializer implements CommandLineRunner {
 
-    //private static WishListRepository wishListRepository;
     @Autowired
     private ClientRepository clientRepository;
     @Autowired
@@ -32,7 +30,7 @@ public class DataInitializer implements CommandLineRunner {
         bookSeeder(10, this.bookList, bookRepository);
     }
 
-    private static void clientSeeder(
+    private void clientSeeder(
             int numOfClients,
             List<Client> clientList,
             ClientRepository clientRepository
@@ -41,13 +39,13 @@ public class DataInitializer implements CommandLineRunner {
         Faker faker = new Faker();
 
         for (int i = 0; i < numOfClients; i++){
-            String name = faker.name().firstName();
             String  username = faker.name().username();
             String password = faker.internet().password();
-            String emailAddress = faker.internet().emailAddress();
-            String homeAddress = faker.address().streetAddress();
+            String name = faker.name().firstName();
+            String email = faker.internet().emailAddress();
+            String address = faker.address().streetAddress();
 
-            Client client = new Client(name, username, password, emailAddress, homeAddress);
+            Client client = new Client(username, password, name, email, address);
             clientList.add(client);
         }
 

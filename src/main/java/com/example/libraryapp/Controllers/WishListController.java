@@ -1,4 +1,4 @@
-package com.example.libraryapp.Controllers.Client;
+package com.example.libraryapp.Controllers;
 
 //import java.util.List;
 
