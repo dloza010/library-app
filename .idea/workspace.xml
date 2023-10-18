@@ -5,21 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1612401a-6914-4dc5-b794-24bc480ca4af" name="Changes" comment="Removed database configuration logic from main SpringBootApplication file and stored it in bootstrap folder">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Client/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Client/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Client/ClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/ClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/LibraryAppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/LibraryAppApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/ClientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/BookRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/ClientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/ClientRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -30,6 +34,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -42,6 +51,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.2.9/bin/php" />
   <component name="ProjectId" id="2VdqyXcFSurWl3XcQSGcmYtC1H0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -58,7 +68,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "feat/profile-management",
-    "last_opened_file_path": "/Users/david/Repos/library-app/src/main/resources",
+    "last_opened_file_path": "/Users/david/Repos/gitHub/library-app/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,6 +120,7 @@
       <workItem from="1695655932980" duration="5502000" />
       <workItem from="1695663810356" duration="784000" />
       <workItem from="1696117514789" duration="3802000" />
+      <workItem from="1697585197538" duration="993000" />
     </task>
     <task id="LOCAL-00001" summary="configuration setup to database">
       <option name="closed" value="true" />

@@ -29,7 +29,7 @@ public class DataInitializer implements CommandLineRunner {
         bookSeeder(10, this.bookList, this.bookRepository);
     }
 
-    private static void clientSeeder(
+    private void clientSeeder(
             int numOfClients,
             List<Client> clientList,
             ClientRepository clientRepository
@@ -38,11 +38,13 @@ public class DataInitializer implements CommandLineRunner {
         Faker faker = new Faker();
 
         for (int i = 0; i < numOfClients; i++){
-            String name = faker.name().firstName();
             String  username = faker.name().username();
             String password = faker.internet().password();
+            String name = faker.name().firstName();
+            String email = faker.internet().emailAddress();
+            String address = faker.address().streetAddress();
 
-            Client client = new Client(name, username, password);
+            Client client = new Client(username, password, name, email, address);
             clientList.add(client);
         }
 

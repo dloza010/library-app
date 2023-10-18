@@ -16,12 +16,17 @@ public class ClientController {
     private ClientRepository clientRepository;
 
     @GetMapping("")
-    public List<Client> getAllBooks() {
-        return clientRepository.findAll();
+    public ResponseEntity<List<Client>> getAllBooks() {
+        List<Client> clients = clientRepository.findAll();
+
+        if(clients == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(clientRepository.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Client> getBookById(@PathVariable("id") Long id) {
+    public ResponseEntity<Client> getUserById(@PathVariable("id") Long id) {
         Client client = clientRepository.findById(id).orElse(null);
 
         if (client == null) {
@@ -32,7 +37,10 @@ public class ClientController {
     }
 
     @PostMapping("")
-    public ResponseEntity<Client> createClient(@RequestBody Client client) {
+    public ResponseEntity<?> createClient(@RequestBody Client client) {
+        if (!client.validate()){
+            return ResponseEntity.badRequest().body("Both username and password must be entered.");
+        }
         Client savedClient = clientRepository.save(client);
         return new ResponseEntity<>(savedClient, HttpStatus.CREATED);
     }
