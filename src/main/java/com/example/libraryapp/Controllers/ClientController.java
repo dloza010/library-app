@@ -1,4 +1,4 @@
-package com.example.libraryapp.Controllers.Client;
+package com.example.libraryapp.Controllers;
 
 import com.example.libraryapp.entity.Client.Client;
 import com.example.libraryapp.repositories.ClientRepository;
@@ -26,7 +26,7 @@ public class ClientController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Client> getUserById(@PathVariable("id") Long id) {
+    public ResponseEntity<Client> getClientById(@PathVariable("id") Long id) {
         Client client = clientRepository.findById(id).orElse(null);
 
         if (client == null) {

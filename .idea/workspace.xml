@@ -5,15 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1612401a-6914-4dc5-b794-24bc480ca4af" name="Changes" comment="Removed database configuration logic from main SpringBootApplication file and stored it in bootstrap folder">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/WishList/WishList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/WishListItem/WishListItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/WishListItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/WishListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/WishListController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/WishList/WishList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/WishListItem/WishListItem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/WishListItemRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/WishListRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/libraryapp/LibraryAppApplicationTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Client/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Client/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Client/ClientController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/ClientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/LibraryAppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/LibraryAppApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/Config.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Book/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Book/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Client/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/BookRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/ClientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/ClientRepository.class" afterDir="false" />
     </list>
@@ -67,7 +79,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feat/profile-management",
+    "git-widget-placeholder": "Merging feat/profile-management",
     "last_opened_file_path": "/Users/david/Repos/gitHub/library-app/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

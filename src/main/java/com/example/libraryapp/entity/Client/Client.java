@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+
 @Entity
 public class Client {
 
@@ -17,8 +18,8 @@ public class Client {
     @NotNull
     private String password;
     private String name;
-    private String email_address;
-    private String home_address;
+    private String emailAddress;
+    private String homeAddress;
 
     //CONSTRUCTORS
     public Client(){
@@ -29,14 +30,14 @@ public class Client {
             @NotNull String username,
             @NotNull String password,
             String name,
-            String email_address,
-            String home_address
+            String emailAddress,
+            String homeAddress
     ) {
         this.username = username;
         this.password = password;
         this.name = name;
-        this.email_address = email_address;
-        this.home_address = home_address;
+        this.emailAddress = emailAddress;
+        this.homeAddress = homeAddress;
     }
 
     @Override
@@ -87,20 +88,20 @@ public class Client {
         this.name = name;
     }
 
-    public String getEmail_address() {
-        return email_address;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setEmail_address(String email_address) {
-        this.email_address = email_address;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
-    public String getHome_address() {
-        return home_address;
+    public String getHomeAddress() {
+        return homeAddress;
     }
 
-    public void setHome_address(String home_address) {
-        this.home_address = home_address;
+    public void setHomeAddress(String homeAddress) {
+        this.homeAddress = homeAddress;
     }
 
     public boolean validate(){
