@@ -50,7 +50,6 @@ public class DataInitializer implements CommandLineRunner {
             List<Client> clientList,
             ClientRepository clientRepository
     ){
-
         Faker faker = new Faker();
 
         for (int i = 0; i < numOfClients; i++){
@@ -124,11 +123,6 @@ public class DataInitializer implements CommandLineRunner {
         authorDetailsRepository.saveAll(bookAuthorDetails);
         bookRepository.saveAll(bookList);
         bookAuthorIntermediateRepository.saveAll(bookAuthorIntermediates);
-
-
-
-
-
 
     }
 }

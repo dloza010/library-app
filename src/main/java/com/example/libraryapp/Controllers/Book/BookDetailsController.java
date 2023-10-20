@@ -1,4 +1,4 @@
-package com.example.libraryapp.Controllers.Client;
+package com.example.libraryapp.Controllers.Book;
 
 import com.example.libraryapp.entity.Book.Book_Details;
 import com.example.libraryapp.entity.Client.Client;
