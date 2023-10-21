@@ -26,13 +26,8 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-<<<<<<< HEAD
         clientSeeder(3, this.clientList, this.clientRepository);
         bookSeeder(20, this.bookList, this.bookRepository);
-=======
-        clientSeeder(3, this.clientList, clientRepository);
-        bookSeeder(10, this.bookList, bookRepository);
->>>>>>> main
     }
 
     private void clientSeeder(
@@ -71,17 +66,10 @@ public class DataInitializer implements CommandLineRunner {
             int quantity = faker.number().numberBetween(1, 20);
             int releaseYear = faker.number().numberBetween(1990, 2010);
             String author = faker.book().author();
-<<<<<<< HEAD
-            String genre = faker.book().genre();
-
-            Book book = new Book(title, quantity, releaseYear, author, genre);
-=======
             int price = faker.number().numberBetween(20, 100);
             String genre = faker.book().genre();
 
             Book book = new Book(title, quantity, releaseYear, author, price, genre);
->>>>>>> main
-            bookList.add(book);
         }
 
         bookRepository.saveAll(bookList);
