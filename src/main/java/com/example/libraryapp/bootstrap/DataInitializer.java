@@ -70,6 +70,7 @@ public class DataInitializer implements CommandLineRunner {
             String genre = faker.book().genre();
 
             Book book = new Book(title, quantity, releaseYear, author, price, genre);
+            bookList.add(book);
         }
 
         bookRepository.saveAll(bookList);
