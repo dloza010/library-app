@@ -26,7 +26,7 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         clientSeeder(3, this.clientList, this.clientRepository);
-        bookSeeder(10, this.bookList, this.bookRepository);
+        bookSeeder(20, this.bookList, this.bookRepository);
     }
 
     private static void clientSeeder(
