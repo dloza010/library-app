@@ -18,6 +18,7 @@ public class Book {
     private int quantity;
     private int releaseYear;
     private String author;
+    private int price;
     private String genre;
 
     @Override
@@ -38,11 +39,12 @@ public class Book {
 
     }
 
-    public Book(String title, int quantity, int releaseYear, String author, String genre) {
+    public Book(String title, int quantity, int releaseYear, String author, int price, String genre) {
         this.title = title;
         this.quantity = quantity;
         this.releaseYear = releaseYear;
         this.author = author;
+        this.price = price;
         this.genre = genre;
     }
 
@@ -86,7 +88,13 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+    public int getPrice() {
+        return price;
+    }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
     public String getGenre() {
         return genre;
     }
@@ -94,11 +102,4 @@ public class Book {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
-    // @Override
-    // public int compareTo(Book a) {
-    //     if(a.getTitle().compareTo(a.getTitle()) != 0)
-    //         return a.getTitle().compareTo(a.getTitle());		    
-    // else return 0;
-    // }
 }
