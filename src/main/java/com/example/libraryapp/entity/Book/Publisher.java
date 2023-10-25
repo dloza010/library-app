@@ -39,9 +39,9 @@ public class Publisher {
         return publisher_id;
     }
 
-    public void setPublisher_id(long publisher_id) {
-        this.publisher_id = publisher_id;
-    }
+//    public void setPublisher_id(long publisher_id) {
+//        this.publisher_id = publisher_id;
+//    }
 
     public String getPublisher_name() {
         return publisher_name;

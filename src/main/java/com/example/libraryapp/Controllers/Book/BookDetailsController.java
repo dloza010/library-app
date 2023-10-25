@@ -1,37 +1,22 @@
 package com.example.libraryapp.Controllers.Book;
 
+import com.example.libraryapp.Services.Book.Book_Details_Service;
 import com.example.libraryapp.entity.Book.Book_Details;
-import com.example.libraryapp.entity.Client.Client;
-import com.example.libraryapp.repositories.*;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 @RestController
 @RequestMapping(path ="/books", method = RequestMethod.GET)
 public class BookDetailsController {
-    @Autowired
-    private BookRepository bookRepository;
+
+    private final Book_Details_Service bookDetailsService;
 
     @Autowired
-    private Book_Author_Intermediate_Repository bookAuthorIntermediateRepository;
-
-    @Autowired
-    private PublisherRepository publisherRepository;
-
-    @Autowired
-    private Author_Details_Repository authorDetailsRepository;
-
-    @Autowired
-    private ClientRepository clientRepository;
-
-
+    public BookDetailsController(Book_Details_Service bookDetailsService) {
+        this.bookDetailsService = bookDetailsService;
+    }
 //    @GetMapping("")
 //    public List<Object[]> getAllBookDetails() {
 //        final EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-h2-return-multiple-entities");
@@ -50,7 +35,7 @@ public class BookDetailsController {
     //Retrieve a book's details by the ISBN
     @GetMapping("/{ISBN}")
     public ResponseEntity<Book_Details> getBookById(@PathVariable("ISBN") long isbn) {
-        Book_Details bookDetails = bookRepository.findById(isbn).orElse(null);
+        Book_Details bookDetails = bookDetailsService.getBookByID(isbn);
 
         if (bookDetails == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

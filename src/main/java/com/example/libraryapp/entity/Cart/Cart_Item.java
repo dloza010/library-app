@@ -35,7 +35,7 @@ public class Cart_Item {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cart_Item cart_item = (Cart_Item) o;
-        return id.equals(cart_item.id) && Objects.equals(shopping_cart_id, cart_item.shopping_cart_id) && Objects.equals(ISBN, cart_item.ISBN) && Objects.equals(quantity, cart_item.quantity);
+        return id.equals(cart_item.id);
     }
 
     @Override
@@ -45,10 +45,6 @@ public class Cart_Item {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Shopping_Cart getShopping_cart_id() {

@@ -42,9 +42,9 @@ public class Author_Details {
         return author_id;
     }
 
-    public void setAuthor_id(long author_id) {
-        this.author_id = author_id;
-    }
+//    public void setAuthor_id(long author_id) {
+//        this.author_id = author_id;
+//    }
 
     public String getFirst_name() {
         return first_name;

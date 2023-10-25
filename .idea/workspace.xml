@@ -5,24 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1612401a-6914-4dc5-b794-24bc480ca4af" name="Changes" comment="Added extra route '/' and updated dependencies">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Cart/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Comments/CommentsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Wishlist/WishlistController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Cart_Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Shopping_Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Books_Owned.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Comments/Comments.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Comments/Ratings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Wishlist/Wishlist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Books_Owned_Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Cart_Item_Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Comments_Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Ratings_Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Shopping_Cart_Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Wishlist_Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Services/Book/Book_Details_Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Client/BookDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Book/BookDetailsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Book/BookDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Book/BookDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Author_Details.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Author_Details.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book_Author_Intermediate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book_Author_Intermediate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Publisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Cart_Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Cart_Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Shopping_Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Shopping_Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Books_Owned.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Books_Owned.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Comments/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Comments/Comments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Comments/Ratings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Comments/Ratings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Wishlist/Wishlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Wishlist/Wishlist.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +74,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;800c816b40515eadf202cfc6466ac5aa&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -148,7 +144,9 @@
       <workItem from="1697423404179" duration="624000" />
       <workItem from="1697588440231" duration="87000" />
       <workItem from="1697588545013" duration="1394000" />
-      <workItem from="1697770698307" duration="3117000" />
+      <workItem from="1697770698307" duration="7927000" />
+      <workItem from="1698004144243" duration="5458000" />
+      <workItem from="1698191843351" duration="4508000" />
     </task>
     <task id="LOCAL-00001" summary="configuration setup to database">
       <option name="closed" value="true" />
@@ -226,5 +224,9 @@
     <MESSAGE value="Added extra route '/' and updated dependencies" />
     <MESSAGE value="Removed database configuration logic from main SpringBootApplication file and stored it in bootstrap folder" />
     <option name="LAST_COMMIT_MESSAGE" value="Removed database configuration logic from main SpringBootApplication file and stored it in bootstrap folder" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
