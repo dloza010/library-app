@@ -4,7 +4,13 @@ import com.example.libraryapp.entity.Book.Author_Details;
 import com.example.libraryapp.entity.Book.Book_Author_Intermediate;
 import com.example.libraryapp.entity.Book.Book_Details;
 import com.example.libraryapp.entity.Book.Publisher;
+import com.example.libraryapp.entity.Cart.Cart_Item;
+import com.example.libraryapp.entity.Cart.Shopping_Cart;
+import com.example.libraryapp.entity.Client.Books_Owned;
 import com.example.libraryapp.entity.Client.Client;
+import com.example.libraryapp.entity.Comments.Comments;
+import com.example.libraryapp.entity.Comments.Ratings;
+import com.example.libraryapp.entity.Wishlist.Wishlist;
 import com.example.libraryapp.repositories.*;
 import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
@@ -28,6 +34,19 @@ public class DataInitializer implements CommandLineRunner {
     private List<Publisher> publisherList = new ArrayList<>();
     private List<Book_Author_Intermediate> bookAuthorIntermediates = new ArrayList<>();
     private List<Author_Details> bookAuthorDetails = new ArrayList<>();
+    private List<Cart_Item> cartItemsList;
+    private Cart_Item_Repository cartItemRepository;
+    private List<Shopping_Cart> shoppingCartsList;
+    private Shopping_Cart_Repository shoppingCartRepository;
+    private Books_Owned_Repository booksOwnedRepository;
+    private List<Comments> commentsList;
+    private Comments_Repository commentsRepository;
+    private List<Ratings> ratingsList;
+    private Ratings_Repository ratingsRepository;
+    private List<Books_Owned> booksOwnedList;
+    private List<Wishlist> wishList;
+    private Wishlist_Repository wishlistRepository;
+
     public DataInitializer(ClientRepository clientRepository, BookRepository bookRepository, PublisherRepository publisherRepository,
                            Book_Author_Intermediate_Repository bookAuthorIntermediateRepository, Author_Details_Repository authorDetailsRepository){
         this.clientRepository = clientRepository;
@@ -43,6 +62,11 @@ public class DataInitializer implements CommandLineRunner {
         clientSeeder(8, this.clientList, this.clientRepository);
         bookSeeder(30, this.bookList, this.bookRepository, this.publisherList, this.publisherRepository,
                 this.bookAuthorIntermediates, this.bookAuthorIntermediateRepository, this.bookAuthorDetails, this.authorDetailsRepository);
+        //the below seeders are not yet implemented
+        shoppingCartSeeder(3,this.clientRepository,this.bookRepository,this.cartItemsList,this.cartItemRepository, this.shoppingCartsList,this.shoppingCartRepository);
+        booksOwnedSeeder(this.clientRepository,this.bookRepository,this.commentsRepository,this.ratingsRepository,this.booksOwnedList,this.booksOwnedRepository);
+        commentsSeeder(2,this.clientRepository,this.bookRepository,this.booksOwnedRepository,this.commentsList,this.commentsRepository,this.ratingsList,this.ratingsRepository);
+        wishlistSeeder(3,this.clientRepository,this.bookRepository,this.wishList,this.wishlistRepository);
     }
 
     private static void clientSeeder(
@@ -63,7 +87,6 @@ public class DataInitializer implements CommandLineRunner {
         }
 
         clientRepository.saveAll(clientList);
-
     }
 
     private static void bookSeeder(
@@ -124,6 +147,86 @@ public class DataInitializer implements CommandLineRunner {
         bookRepository.saveAll(bookList);
         bookAuthorIntermediateRepository.saveAll(bookAuthorIntermediates);
 
+    }
+
+    private static void wishlistSeeder(
+            int numOfWishes,
+            ClientRepository clientRepository,
+            BookRepository bookRepository,
+            List<Wishlist> wishlists,
+            Wishlist_Repository wishlist
+    ){
+        Faker faker = new Faker();
+
+        for (int i = 0; i < clientRepository.count(); i++){
+
+
+
+        }
+
+        //clientRepository.saveAll(clientList);
+    }
+
+    private static void commentsSeeder(
+            //number of comments for each person
+            int numOfComments,
+            ClientRepository clientRepository,
+            BookRepository bookRepository,
+            Books_Owned_Repository booksOwnedRepository,
+            List<Comments> comments,
+            Comments_Repository commentsRepository,
+            List<Ratings> ratings,
+            Ratings_Repository ratingsRepository
+    ){
+        Faker faker = new Faker();
+
+        for (int i = 0; i < clientRepository.count(); i++){
+
+
+
+        }
+
+        //clientRepository.saveAll(clientList);
+    }
+
+    private static void shoppingCartSeeder(
+            int numOfItemsPerCart,
+            ClientRepository clientRepository,
+            BookRepository bookRepository,
+            List<Cart_Item> cart_items,
+            Cart_Item_Repository cart_item_repository,
+            List<Shopping_Cart> shopping_carts,
+            Shopping_Cart_Repository shopping_cart_repository
+    ){
+        Faker faker = new Faker();
+
+        for (int i = 0; i < clientRepository.count(); i++){
+
+
+
+        }
+
+        //clientRepository.saveAll(clientList);
+    }
+    
+    
+    private static void booksOwnedSeeder(
+            ClientRepository clientRepository,
+            BookRepository bookRepository,
+            Comments_Repository commentsRepository,
+            Ratings_Repository ratingsRepository,
+            List<Books_Owned> booksOwned,
+            Books_Owned_Repository booksOwnedRepository
+    ){
+        Faker faker = new Faker();
+
+        for (int i = 0; i < clientRepository.count(); i++){
+            
+
+            
+        }
+
+        //clientRepository.saveAll(clientList);
     }
 }
 
