@@ -15,14 +15,15 @@ public class Shopping_Cart {
     @JoinColumn(name="user_id")
     private Client client;
 
-    private double total;
+    //private double total;
+    //Note: we may need a service to get the total price in a shopping cart
 
     public Shopping_Cart() {
     }
 
-    public Shopping_Cart(Client client, double total) {
+    public Shopping_Cart(Client client) {
         this.client = client;
-        this.total = total;
+        //this.total = total;
     }
 
     @Override
@@ -50,11 +51,4 @@ public class Shopping_Cart {
         this.client = client;
     }
 
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
 }

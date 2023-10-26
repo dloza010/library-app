@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Long.parseLong;
 
@@ -48,12 +49,21 @@ public class DataInitializer implements CommandLineRunner {
     private Wishlist_Repository wishlistRepository;
 
     public DataInitializer(ClientRepository clientRepository, BookRepository bookRepository, PublisherRepository publisherRepository,
-                           Book_Author_Intermediate_Repository bookAuthorIntermediateRepository, Author_Details_Repository authorDetailsRepository){
+                           Book_Author_Intermediate_Repository bookAuthorIntermediateRepository, Author_Details_Repository authorDetailsRepository,
+                           Shopping_Cart_Repository shoppingCartRepository, Cart_Item_Repository cartItemRepository,
+                           Books_Owned_Repository booksOwnedRepository, Comments_Repository commentsRepository, Ratings_Repository ratingsRepository,
+                           Wishlist_Repository wishlistRepository){
         this.clientRepository = clientRepository;
         this.bookRepository = bookRepository;
         this.publisherRepository = publisherRepository;
         this.bookAuthorIntermediateRepository = bookAuthorIntermediateRepository;
         this.authorDetailsRepository = authorDetailsRepository;
+        this.shoppingCartRepository = shoppingCartRepository;
+        this.cartItemRepository = cartItemRepository;
+        this.booksOwnedRepository = booksOwnedRepository;
+        this.commentsRepository = commentsRepository;
+        this.ratingsRepository = ratingsRepository;
+        this.wishlistRepository = wishlistRepository;
     }
 
     @Override
@@ -62,8 +72,9 @@ public class DataInitializer implements CommandLineRunner {
         clientSeeder(8, this.clientList, this.clientRepository);
         bookSeeder(30, this.bookList, this.bookRepository, this.publisherList, this.publisherRepository,
                 this.bookAuthorIntermediates, this.bookAuthorIntermediateRepository, this.bookAuthorDetails, this.authorDetailsRepository);
+        shoppingCartSeeder(this.clientRepository,this.bookRepository,this.cartItemsList,this.cartItemRepository, this.shoppingCartsList,this.shoppingCartRepository);
+
         //the below seeders are not yet implemented
-        shoppingCartSeeder(3,this.clientRepository,this.bookRepository,this.cartItemsList,this.cartItemRepository, this.shoppingCartsList,this.shoppingCartRepository);
         booksOwnedSeeder(this.clientRepository,this.bookRepository,this.commentsRepository,this.ratingsRepository,this.booksOwnedList,this.booksOwnedRepository);
         commentsSeeder(2,this.clientRepository,this.bookRepository,this.booksOwnedRepository,this.commentsList,this.commentsRepository,this.ratingsList,this.ratingsRepository);
         wishlistSeeder(3,this.clientRepository,this.bookRepository,this.wishList,this.wishlistRepository);
@@ -158,7 +169,8 @@ public class DataInitializer implements CommandLineRunner {
     ){
         Faker faker = new Faker();
 
-        for (int i = 0; i < clientRepository.count(); i++){
+        for (long i = 0; i < clientRepository.count(); i++){
+            Client client = clientRepository.getReferenceById(i+1);
 
 
 
@@ -190,25 +202,35 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     private static void shoppingCartSeeder(
-            int numOfItemsPerCart,
             ClientRepository clientRepository,
             BookRepository bookRepository,
             List<Cart_Item> cart_items,
-            Cart_Item_Repository cart_item_repository,
+            Cart_Item_Repository cartItemRepository,
             List<Shopping_Cart> shopping_carts,
-            Shopping_Cart_Repository shopping_cart_repository
+            Shopping_Cart_Repository shoppingCartRepository
     ){
         Faker faker = new Faker();
+        List<Book_Details> books = bookRepository.findAll();
+        List<Client> client = clientRepository.findAll();
+        shopping_carts = new ArrayList<Shopping_Cart>();
+        cart_items = new ArrayList<Cart_Item>();
+        for (int i = 0; i < (int) client.size(); i++){
+            //System.out.println(client);
+            //int randomNum = (int)(Math.random() * 3) + 1;
+            Shopping_Cart shopping_cart = new Shopping_Cart(client.get(i));
+            shopping_carts.add(shopping_cart);
 
-        for (int i = 0; i < clientRepository.count(); i++){
-
-
-
+            //adding random number of cart items to shopping carts for each client/user
+            for(int n = 0; n < 5; n++){
+                int randomBookIndex = (int)(Math.random() * (int) bookRepository.count());
+                int randomQuantity = (int)(Math.random() * 3) + 1;
+                Cart_Item cart_item = new Cart_Item(shopping_cart, books.get(randomBookIndex), randomQuantity);
+                cart_items.add(cart_item);
+            }
         }
-
-        //clientRepository.saveAll(clientList);
+        shoppingCartRepository.saveAll(shopping_carts);
+        cartItemRepository.saveAll(cart_items);
     }
-    
     
     private static void booksOwnedSeeder(
             ClientRepository clientRepository,
