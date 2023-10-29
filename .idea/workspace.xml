@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1612401a-6914-4dc5-b794-24bc480ca4af" name="Changes" comment="Added extra route '/' and updated dependencies">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/JSON_Mapping/Create_Books.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Book_Details_Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Book/BookDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Book/BookDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Services/Book/Book_Details_Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Services/Book/Book_Details_Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Cart_Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Cart_Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Shopping_Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Cart/Shopping_Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Author_Details_Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Author_Details_Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Book_Author_Intermediate_Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Book_Author_Intermediate_Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/PublisherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/PublisherRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Book/BookDetailsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Book/BookDetailsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Services/Book/Book_Details_Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Services/Book/Book_Details_Service.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +29,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
+        <option value="spring-beans.schema" />
         <option value="Class" />
       </list>
     </option>
@@ -140,7 +149,8 @@
       <workItem from="1698004144243" duration="5458000" />
       <workItem from="1698191843351" duration="7770000" />
       <workItem from="1698210544069" duration="798000" />
-      <workItem from="1698283156973" duration="7302000" />
+      <workItem from="1698283156973" duration="8555000" />
+      <workItem from="1698539022486" duration="28553000" />
     </task>
     <task id="LOCAL-00001" summary="configuration setup to database">
       <option name="closed" value="true" />
@@ -219,8 +229,18 @@
     <MESSAGE value="Removed database configuration logic from main SpringBootApplication file and stored it in bootstrap folder" />
     <option name="LAST_COMMIT_MESSAGE" value="Removed database configuration logic from main SpringBootApplication file and stored it in bootstrap folder" />
   </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/library_app$LibraryAppApplication.ic" NAME="LibraryAppApplication Coverage Results" MODIFIED="1698568325703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

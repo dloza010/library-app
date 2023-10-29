@@ -1,7 +1,10 @@
 package com.example.libraryapp.Controllers.Book;
 
+import com.example.libraryapp.JSON_Mapping.Create_Books;
 import com.example.libraryapp.Services.Book.Book_Details_Service;
 import com.example.libraryapp.entity.Book.Book_Details;
+import com.example.libraryapp.entity.Client.Client;
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,5 +45,26 @@ public class BookDetailsController {
         }
 
         return new ResponseEntity<>(bookDetails, HttpStatus.OK);
+    }
+
+    //allow admin to add book details to db
+    @PostMapping("/{user_id}/create")
+    public ResponseEntity<List> createBook(@PathVariable("user_id") long user_id,
+                                           @RequestBody Create_Books create_books){
+
+        //check that user is admin. if not admin, then reject request
+        Client client = bookDetailsService.isAdmin(user_id);
+        if(client != null){
+            boolean query = bookDetailsService.createBook(create_books.getISBN(), create_books.getTitle(),
+                    create_books.getDescription(), create_books.getPrice(), create_books.getGenre(), create_books.getYear_published(),
+                    create_books.getCopies_sold(), create_books.getPublisher_name(), create_books.getAuthorFirstName(),
+                    create_books.getAuthorLastName());
+            if (query == false) {
+                return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
+            }
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }else{
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
     }
 }
