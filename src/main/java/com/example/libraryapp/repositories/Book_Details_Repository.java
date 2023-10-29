@@ -35,6 +35,6 @@ public interface Book_Details_Repository extends JpaRepository<Book_Details, Lon
             + " Author_Details c, Publisher p WHERE a.ISBN = ?1 AND a.ISBN = b.book_details.ISBN AND"
             + " b.author_details.author_id = ?2 AND b.author_details.author_id = c.author_id AND a.publisher.publisher_id = p.publisher_id"
             + " AND p.publisher_id = ?3")
-    public org.hibernate.mapping.List findFullBookDetails(long ISBN, long author_id, long publisher_id);
+    public List findFullBookDetails(long ISBN, long author_id, long publisher_id);
     }
 //}

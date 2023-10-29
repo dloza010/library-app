@@ -61,9 +61,9 @@ public class Book_Details_Service {
 
     //return all book details by ISBN
     //--Exceptions with below method; unsure on how to resolve
-    public org.hibernate.mapping.List findBookDetailsById(long ISBN){
-        List author_id = (List) bookAuthorIntermediateRepository.findAuthorId(ISBN);
-        List publisher_id = (List) publisherRepository.findPublisherId(ISBN);
+    public List findBookDetailsById(long ISBN){
+        List author_id = bookAuthorIntermediateRepository.findAuthorId(ISBN);
+        List publisher_id = publisherRepository.findPublisherId(ISBN);
         long publisherId;
         long authorId;
         if(publisher_id == null){
@@ -124,7 +124,7 @@ public class Book_Details_Service {
             bookAuthorIntermediateRepository.saveAll(bookAuthorIntermediates);
 
             //retrieve book details
-            //org.hibernate.mapping.List bookDetails;
+            //List bookDetails;
             //bookDetails = findBookDetailsById(ISBN);
 
             //update JSON object result if more than 1 authors to include author names
