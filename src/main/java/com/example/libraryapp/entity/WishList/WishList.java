@@ -1,5 +1,6 @@
 package com.example.libraryapp.entity.WishList;
 
+import com.example.libraryapp.entity.Client.Client;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,12 +10,9 @@ import jakarta.persistence.OneToOne;
 
 import java.util.Objects;
 
-import com.example.libraryapp.entity.Client.Client;
-import com.example.libraryapp.entity.WishList.WishList;
-
 @Entity
 public class WishList {
-    
+
     // Instance variables
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -49,11 +47,11 @@ public class WishList {
     }
 
     // Setters and Getters
-    public void setwishListID(Long wishListID) {
+    public void setWishListID(Long wishListID) {
         this.wishListID = wishListID;
     }
 
-    public Long getwishListID() {
+    public Long getWishListID() {
         return wishListID;
     }
     public void setUserID(Long userID) {
