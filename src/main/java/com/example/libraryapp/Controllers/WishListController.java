@@ -2,22 +2,19 @@ package com.example.libraryapp.Controllers;
 
 //import java.util.List;
 
+import com.example.libraryapp.entity.Book.Book;
+import com.example.libraryapp.entity.Client.Client;
+import com.example.libraryapp.entity.WishList.WishList;
+import com.example.libraryapp.repositories.BookRepository;
+import com.example.libraryapp.repositories.ClientRepository;
+import com.example.libraryapp.repositories.WishListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.libraryapp.repositories.ClientRepository;
-import com.example.libraryapp.repositories.WishListRepository;
-import com.example.libraryapp.entity.Book.Book;
-import com.example.libraryapp.entity.Client.Client;
-import com.example.libraryapp.entity.Wishlist.WishList;
-//import com.example.libraryapp.entity.WishListItem.WishListItem;
-import com.example.libraryapp.repositories.BookRepository;
 
 
 @RestController

@@ -84,7 +84,7 @@ public class Book_Details_Service {
     }
 
     public Book_Details getBookByID(long isbn){
-        Book_Details bookDetails = bookRepository.findById(isbn).orElse(null);
+        Book_Details bookDetails = bookDetailsRepository.findById(isbn).orElse(null);
         return bookDetails;
     }
 
@@ -119,7 +119,7 @@ public class Book_Details_Service {
 
             //commit new data to db
             publisherRepository.saveAll(publisherList);
-            bookRepository.saveAll(bookList);
+            bookDetailsRepository.saveAll(bookList);
             authorDetailsRepository.saveAll(bookAuthorDetails);
             bookAuthorIntermediateRepository.saveAll(bookAuthorIntermediates);
 

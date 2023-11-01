@@ -10,21 +10,14 @@ import com.example.libraryapp.entity.Client.Books_Owned;
 import com.example.libraryapp.entity.Client.Client;
 import com.example.libraryapp.entity.Comments.Comments;
 import com.example.libraryapp.entity.Comments.Ratings;
-import com.example.libraryapp.entity.Wishlist.Wishlist;
+import com.example.libraryapp.entity.WishList.WishList;
 import com.example.libraryapp.repositories.*;
 import com.github.javafaker.Faker;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Long.parseLong;
 
@@ -33,7 +26,7 @@ import static java.lang.Long.parseLong;
 public class DataInitializer implements CommandLineRunner {
 
     private final ClientRepository clientRepository;
-    private final BookRepository bookRepository;
+    private final Book_Details_Repository bookRepository;
     private final PublisherRepository publisherRepository;
     private final Book_Author_Intermediate_Repository bookAuthorIntermediateRepository;
     private final Author_Details_Repository authorDetailsRepository;
@@ -52,10 +45,10 @@ public class DataInitializer implements CommandLineRunner {
     private List<Ratings> ratingsList;
     private Ratings_Repository ratingsRepository;
     private List<Books_Owned> booksOwnedList;
-    private List<Wishlist> wishList;
+    private List<WishList> wishList;
     private Wishlist_Repository wishlistRepository;
 
-    public DataInitializer(ClientRepository clientRepository, BookRepository bookRepository, PublisherRepository publisherRepository,
+    public DataInitializer(ClientRepository clientRepository, Book_Details_Repository bookRepository, PublisherRepository publisherRepository,
                            Book_Author_Intermediate_Repository bookAuthorIntermediateRepository, Author_Details_Repository authorDetailsRepository,
                            Shopping_Cart_Repository shoppingCartRepository, Cart_Item_Repository cartItemRepository,
                            Books_Owned_Repository booksOwnedRepository, Comments_Repository commentsRepository, Ratings_Repository ratingsRepository,
@@ -112,7 +105,7 @@ public class DataInitializer implements CommandLineRunner {
     private static void bookSeeder(
             int numOfBooks,
             List<Book_Details> bookList,
-            BookRepository bookRepository,
+            Book_Details_Repository bookRepository,
             List<Publisher> publisherList,
             PublisherRepository publisherRepository,
             List<Book_Author_Intermediate> bookAuthorIntermediates,
@@ -172,8 +165,8 @@ public class DataInitializer implements CommandLineRunner {
     private static void wishlistSeeder(
             int numOfWishes,
             ClientRepository clientRepository,
-            BookRepository bookRepository,
-            List<Wishlist> wishlists,
+            Book_Details_Repository bookRepository,
+            List<WishList> wishlists,
             Wishlist_Repository wishlist
     ){
         Faker faker = new Faker();
@@ -192,7 +185,7 @@ public class DataInitializer implements CommandLineRunner {
             //number of comments for each person
             int numOfComments,
             ClientRepository clientRepository,
-            BookRepository bookRepository,
+            Book_Details_Repository bookRepository,
             Books_Owned_Repository booksOwnedRepository,
             List<Comments> comments,
             Comments_Repository commentsRepository,
@@ -212,7 +205,7 @@ public class DataInitializer implements CommandLineRunner {
 
     private static void shoppingCartSeeder(
             ClientRepository clientRepository,
-            BookRepository bookRepository,
+            Book_Details_Repository bookRepository,
             List<Cart_Item> cart_items,
             Cart_Item_Repository cartItemRepository,
             List<Shopping_Cart> shopping_carts,
@@ -243,7 +236,7 @@ public class DataInitializer implements CommandLineRunner {
     
     private static void booksOwnedSeeder(
             ClientRepository clientRepository,
-            BookRepository bookRepository,
+            Book_Details_Repository bookRepository,
             Comments_Repository commentsRepository,
             Ratings_Repository ratingsRepository,
             List<Books_Owned> booksOwned,
