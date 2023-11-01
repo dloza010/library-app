@@ -20,6 +20,7 @@ public class Client {
     private String name;
     private String emailAddress;
     private String homeAddress;
+    private boolean isAdmin;
 
     //CONSTRUCTORS
     public Client(){
@@ -31,13 +32,15 @@ public class Client {
             @NotNull String password,
             String name,
             String emailAddress,
-            String homeAddress
+            String homeAddress,
+            boolean isAdmin
     ) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.emailAddress = emailAddress;
         this.homeAddress = homeAddress;
+        this.isAdmin = isAdmin;
     }
 
     @Override
@@ -112,5 +115,24 @@ public class Client {
             return false;
         }
         return true;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", isAdmin=" + isAdmin +
+                '}';
     }
 }

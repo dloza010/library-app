@@ -15,7 +15,7 @@ import com.example.libraryapp.repositories.ClientRepository;
 import com.example.libraryapp.repositories.WishListRepository;
 import com.example.libraryapp.entity.Book.Book;
 import com.example.libraryapp.entity.Client.Client;
-import com.example.libraryapp.entity.WishList.WishList;
+import com.example.libraryapp.entity.Wishlist.WishList;
 //import com.example.libraryapp.entity.WishListItem.WishListItem;
 import com.example.libraryapp.repositories.BookRepository;
 
