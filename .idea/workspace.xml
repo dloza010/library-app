@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1612401a-6914-4dc5-b794-24bc480ca4af" name="Changes" comment="Added extra route '/' and updated dependencies">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Services/Book/Book_Details_Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Services/Book/Book_Details_Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Wishlist/Wishlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Wishlist/Wishlist.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +142,7 @@
       <workItem from="1698283156973" duration="8555000" />
       <workItem from="1698539022486" duration="30787000" />
       <workItem from="1698601704695" duration="1600000" />
+      <workItem from="1698639367913" duration="612000" />
     </task>
     <task id="LOCAL-00001" summary="configuration setup to database">
       <option name="closed" value="true" />
