@@ -4,16 +4,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="1612401a-6914-4dc5-b794-24bc480ca4af" name="Changes" comment="Added extra route '/' and updated dependencies">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Services/Book/Book_Details_Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Services/Book/Book_Details_Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Book_Author_Intermediate_Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Book_Author_Intermediate_Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Book_Details_Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/Book_Details_Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/PublisherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/PublisherRepository.java" afterDir="false" />
+=======
+    <list default="true" id="1612401a-6914-4dc5-b794-24bc480ca4af" name="Changes" comment="Removed database configuration logic from main SpringBootApplication file and stored it in bootstrap folder">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/Sorter/SortingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/Sorter/SortingController.class" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/WishList/WishList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/WishListItem/WishListItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/WishListItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/repositories/WishListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/WishListController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/WishList/WishList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/WishListItem/WishListItem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/WishListItemRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/WishListRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/libraryapp/LibraryAppApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/Controllers/Client/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/bootstrap/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Book/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/libraryapp/entity/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/Controllers/Client/ClientController.class" afterDir="false" />
+>>>>>>> main
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/LibraryAppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/LibraryAppApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/bootstrap/DataInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Book/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Book/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/entity/Client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/BookRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/ClientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/libraryapp/repositories/ClientRepository.class" afterDir="false" />
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -26,6 +63,15 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+<<<<<<< HEAD
+        <entry key="$PROJECT_DIR$" value="feat/profile-management" />
+=======
+        <entry key="$PROJECT_DIR$" value="main" />
+>>>>>>> main
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -38,9 +84,13 @@
       </MavenGeneralSettings>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+=======
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.2.9/bin/php" />
+>>>>>>> main
   <component name="ProjectId" id="2VdqyXcFSurWl3XcQSGcmYtC1H0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -49,6 +99,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
@@ -69,6 +120,32 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;800c816b40515eadf202cfc6466ac5aa&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
+    "git-widget-placeholder": "feat/book-sorter",
+    "last_opened_file_path": "/Users/david/Repos/library-app/src/main/resources",
+=======
+    "git-widget-placeholder": "Merging feat/profile-management",
+    "last_opened_file_path": "/Users/david/Repos/gitHub/library-app/src/main/resources",
+>>>>>>> main
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "800c816b40515eadf202cfc6466ac5aa",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> main
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -132,6 +209,7 @@
       <workItem from="1695655932980" duration="5502000" />
       <workItem from="1695663810356" duration="784000" />
       <workItem from="1696117514789" duration="3802000" />
+<<<<<<< HEAD
       <workItem from="1697162065322" duration="37451000" />
       <workItem from="1697423404179" duration="624000" />
       <workItem from="1697588440231" duration="87000" />
@@ -142,6 +220,9 @@
       <workItem from="1698210544069" duration="798000" />
       <workItem from="1698283156973" duration="8555000" />
       <workItem from="1698539022486" duration="28995000" />
+=======
+      <workItem from="1697585197538" duration="993000" />
+>>>>>>> main
     </task>
     <task id="LOCAL-00001" summary="configuration setup to database">
       <option name="closed" value="true" />

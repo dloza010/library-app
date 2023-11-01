@@ -1,33 +1,45 @@
 package com.example.libraryapp.entity.Client;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
+
 
 @Entity
 public class Client {
 
-    // Instance variables
+    //INSTANCE VARIABLES
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
+    @NotNull
     private String username;
+    @NotNull
     private String password;
+    private String name;
+    private String emailAddress;
+    private String homeAddress;
     private boolean isAdmin;
 
-    // Constructor
-    public Client() {
+    //CONSTRUCTORS
+    public Client(){
 
-    }
+    };
 
-    public Client(String name, String username, String password, boolean isAdmin) {
-        this.name = name;
+    public Client(
+            @NotNull String username,
+            @NotNull String password,
+            String name,
+            String emailAddress,
+            String homeAddress,
+            boolean isAdmin
+    ) {
         this.username = username;
         this.password = password;
+        this.name = name;
+        this.emailAddress = emailAddress;
+        this.homeAddress = homeAddress;
         this.isAdmin = isAdmin;
     }
 
@@ -35,19 +47,40 @@ public class Client {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Client user = (Client) o;
-        return Objects.equals(id, user.id);
+        Client client = (Client) o;
+        return Objects.equals(id, client.id);
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return Objects.hash(id);
     }
-
-    // Setters and Getters
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    //SETTERS AND GETTERS
+    @NotNull
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(@NotNull String username) {
+        this.username = username;
+    }
+
+    @NotNull
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(@NotNull String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -58,20 +91,30 @@ public class Client {
         this.name = name;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
-    public String getPassword() {
-        return password;
+    public String getHomeAddress() {
+        return homeAddress;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setHomeAddress(String homeAddress) {
+        this.homeAddress = homeAddress;
+    }
+
+    public boolean validate(){
+        if (this.username == null || this.username.trim().isEmpty()) {
+            return false;
+        }
+        if (this.password == null || this.password.trim().isEmpty()) {
+            return false;
+        }
+        return true;
     }
 
     public boolean isAdmin() {

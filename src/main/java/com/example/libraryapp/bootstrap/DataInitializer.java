@@ -13,6 +13,8 @@ import com.example.libraryapp.entity.Comments.Ratings;
 import com.example.libraryapp.entity.Wishlist.Wishlist;
 import com.example.libraryapp.repositories.*;
 import com.github.javafaker.Faker;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -25,6 +27,7 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Long.parseLong;
+
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -84,7 +87,7 @@ public class DataInitializer implements CommandLineRunner {
         wishlistSeeder(3,this.clientRepository,this.bookRepository,this.wishList,this.wishlistRepository);
     }
 
-    private static void clientSeeder(
+    private void clientSeeder(
             int numOfClients,
             List<Client> clientList,
             ClientRepository clientRepository
@@ -92,12 +95,14 @@ public class DataInitializer implements CommandLineRunner {
         Faker faker = new Faker();
 
         for (int i = 0; i < numOfClients; i++){
-            String name = faker.name().firstName();
             String  username = faker.name().username();
             String password = faker.internet().password();
+            String name = faker.name().firstName();
+            String email = faker.internet().emailAddress();
+            String address = faker.address().streetAddress();
             boolean isAdmin = faker.bool().bool();
 
-            Client client = new Client(name, username, password, isAdmin);
+            Client client = new Client(username, password, name, email, address, isAdmin);
             clientList.add(client);
         }
 
