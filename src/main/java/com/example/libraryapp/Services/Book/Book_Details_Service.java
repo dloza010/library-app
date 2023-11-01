@@ -124,7 +124,7 @@ public class Book_Details_Service {
             bookAuthorIntermediateRepository.saveAll(bookAuthorIntermediates);
 
             //retrieve book details
-            //List bookDetails;
+            //findBList bookDetails;
             //bookDetails = findBookDetailsById(ISBN);
 
             //update JSON object result if more than 1 authors to include author names
