@@ -1,0 +1,41 @@
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/ratings")
+public class RatingController {
+    private Map<Long, List<Rating>> bookRatings = new HashMap<>();
+    private Map<Long, List<Comment>> bookComments = new HashMap<>();
+
+    @PostMapping("/rate")
+    public void rateBook(@RequestBody Rating rating) {
+        long bookId = rating.getBookId();
+        bookRatings.computeIfAbsent(bookId, k -> new ArrayList<>()).add(rating);
+    }
+
+    @PostMapping("/comment")
+    public void commentBook(@RequestBody Comment comment) {
+        long bookId = comment.getBookId();
+        bookComments.computeIfAbsent(bookId, k -> new ArrayList<>()).add(comment);
+    }
+
+    @GetMapping("/comments/{bookId}")
+    public List<Comment> getComments(@PathVariable long bookId) {
+        return bookComments.getOrDefault(bookId, new ArrayList<>());
+    }
+
+    @GetMapping("/averageRating/{bookId}")
+    public double getAverageRating(@PathVariable long bookId) {
+        List<Rating> ratings = bookRatings.getOrDefault(bookId, new ArrayList<>());
+        if (ratings.isEmpty()) {
+            return 0.0; // Return 0 or handle differently if no ratings are available
+        }
+
+        double sum = ratings.stream().mapToDouble(Rating::getValue).sum();
+        return sum / ratings.size();
+    }
+}
