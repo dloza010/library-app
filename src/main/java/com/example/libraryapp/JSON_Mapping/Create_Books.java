@@ -23,6 +23,16 @@ public class Create_Books {
     private String authorFirstName;
     @JsonProperty("authorLastName")
     private String authorLastName;
+    @JsonProperty("biography")
+    private String biography;
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
+    }
 
     public long getISBN() {
         return ISBN;

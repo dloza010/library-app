@@ -121,6 +121,7 @@ public class DataInitializer implements CommandLineRunner {
         //int rand_int = 0;
         String authorFirstName = faker.name().firstName();
         String authorLastName = faker.name().lastName();
+        String biography = faker.lorem().paragraphs(3).toString();
         for (int i = 0; i < numOfBooks; i++){
             long ISBN = parseLong(faker.code().isbn13());
             int copies_sold = faker.number().numberBetween(1, 20);
@@ -144,8 +145,9 @@ public class DataInitializer implements CommandLineRunner {
             if(i % 2 == 0){
                 authorFirstName = faker.name().firstName();
                 authorLastName = faker.name().lastName();
+                biography = faker.lorem().paragraphs(3).toString();
             }
-            Author_Details authorDetails = new Author_Details(authorFirstName, authorLastName);
+            Author_Details authorDetails = new Author_Details(authorFirstName, authorLastName,biography);
             bookAuthorDetails.add(authorDetails);
             Book_Details book = new Book_Details(ISBN, title, description, price, genre, year_published, copies_sold, publisher);
 
