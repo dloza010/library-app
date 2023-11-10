@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 @RequestMapping(path ="/author", method = RequestMethod.GET)
 public class AuthorDetailsController {
@@ -24,6 +26,17 @@ public class AuthorDetailsController {
     public AuthorDetailsController(Book_Details_Service bookDetailsService, Author_Details_Service authorDetailsService) {
         this.bookDetailsService = bookDetailsService;
         this.authorDetailsService = authorDetailsService;
+    }
+    //Retrieve a book's details by the author id
+    @GetMapping("/book-details/{authorId}")
+    public ResponseEntity<java.util.List<Book_Details>> getBookByAuthorId(@PathVariable("authorId") long id) {
+        java.util.List<Book_Details> bookDetails = authorDetailsService.findBookDetailsByAuthorId(id);
+
+        if (bookDetails == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(bookDetails, HttpStatus.OK);
     }
 
     //allow admin to add author details to db

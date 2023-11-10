@@ -15,6 +15,7 @@ import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,14 +27,42 @@ public class Author_Details_Service {
     private final Author_Details_Repository authorDetailsRepository;
     private final PublisherRepository publisherRepository;
     private List<Publisher> publisherList = new ArrayList<>();
+    private final Book_Author_Intermediate_Repository bookAuthorIntermediateRepository;
+    private List<Book_Author_Intermediate> bookAuthorIntermediates = new ArrayList<>();
+    private final Book_Details_Repository bookDetailsRepository;
     //instantiate author details service
     //autowire author details repository dependency
     @Autowired
-    public Author_Details_Service(Author_Details_Repository authorDetailsRepository, PublisherRepository publisherRepository){
+    public Author_Details_Service(Author_Details_Repository authorDetailsRepository, PublisherRepository publisherRepository,
+                                  Book_Author_Intermediate_Repository bookAuthorIntermediateRepository, Book_Details_Repository bookDetailsRepository){
         this.authorDetailsRepository = authorDetailsRepository;
         this.publisherRepository = publisherRepository;
+        this.bookAuthorIntermediateRepository = bookAuthorIntermediateRepository;
+        this.bookDetailsRepository = bookDetailsRepository;
     }
+    //return all book details by Author id
+    //Note 1: for future: implement case when author does not exist
+    public List findBookDetailsByAuthorId(long id){
+        List bookISBN = bookAuthorIntermediateRepository.findBookISBN(id);
+        ArrayList<Long> bookISBNs = new ArrayList<Long>();
+        ArrayList<Long> publisher_id = new ArrayList<Long>();
+        List book_details = new ArrayList<Long>();
+        for (int i = 0; i < bookISBN.size(); i++)
+        {
+            //Long z = (Long) bookISBN.get(i);
+            bookISBNs.add((Long) bookISBN.get(i));
+        }
+        for (int i = 0; i < bookISBNs.size(); i++)
+        {
+            publisher_id.add((Long) publisherRepository.findPublisherId(bookISBNs.get(i)).get(0));
+        }
+        for (int i = 0; i < bookISBN.size(); i++)
+        {
+            book_details.add(bookDetailsRepository.findFullBookDetails((Long) bookISBNs.get(i), id, (Long) publisher_id.get(i)));
+        }
 
+        return book_details;
+    }
     //create an author
     //@params: authorFirstName, authorLastName, biography, publisher
     //Note 1: future implementation: helper function/logic to check if publisher already exists and if so add link to new author
@@ -54,16 +83,6 @@ public class Author_Details_Service {
             publisherRepository.saveAll(publisherList);
             authorDetailsRepository.saveAll(bookAuthorDetails);
 
-            //retrieve book details
-            //findBList bookDetails;
-            //bookDetails = findBookDetailsById(ISBN);
-
-            //update JSON object result if more than 1 authors to include author names
-            // and exclude duplicate query result rows for other book details
-            //to be implemented later
-//        List bookDetailsRevised;
-//        if(bookDetails.size() > 0){
-//            bookDetailsRevised = bookDetails.
 //        }
         }catch(Exception e){
             method_success_flag = false;
