@@ -99,16 +99,17 @@ public class Book_Details_Service {
     }
 
     //create a book with ISBN, book
-    //name, book description, price, author, genre,
-    // publisher , year published and
+    //@params: name, book description, price, author, genre,
+    //publisher , year published and
     //copies sold
     public boolean createBook(long ISBN, String title, String description, double price, String genre, int year_published,
-                                                 int copies_sold, String publisher_name, String authorFirstName, String authorLastName){
+                                                 int copies_sold, String publisher_name, String authorFirstName, String authorLastName, String biography){
         boolean method_success_flag = true;
         try{
             Publisher publisher = new Publisher(publisher_name);
             Book_Details book_details = new Book_Details(ISBN, title, description, price, genre, year_published, copies_sold, publisher);
-            Author_Details author = new Author_Details(authorFirstName, authorLastName);
+            //add method in future to check if author exists in database and if so link that author to this new book being created
+            Author_Details author = new Author_Details(authorFirstName, authorLastName, biography);
             Book_Author_Intermediate book_author_intermediate = new Book_Author_Intermediate(author, book_details);
 
             //add to staging lists of records for each entity which will be committed to db
@@ -139,4 +140,6 @@ public class Book_Details_Service {
         }
         return method_success_flag;
     }
+
+    //add helper function to check if author exists to be used in createBook()
 }

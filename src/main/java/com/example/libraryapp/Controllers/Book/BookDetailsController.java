@@ -58,7 +58,7 @@ public class BookDetailsController {
             boolean query = bookDetailsService.createBook(create_books.getISBN(), create_books.getTitle(),
                     create_books.getDescription(), create_books.getPrice(), create_books.getGenre(), create_books.getYear_published(),
                     create_books.getCopies_sold(), create_books.getPublisher_name(), create_books.getAuthorFirstName(),
-                    create_books.getAuthorLastName());
+                    create_books.getAuthorLastName(),create_books.getBiography());
             if (query == false) {
                 return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
             }

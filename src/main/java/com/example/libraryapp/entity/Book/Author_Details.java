@@ -15,14 +15,16 @@ public class Author_Details {
     private long author_id;
     private String first_name;
     private String last_name;
+    private String biography;
 
     //constructors
     public Author_Details() {
     }
 
-    public Author_Details(String first_name, String last_name) {
+    public Author_Details(String first_name, String last_name, String biography) {
         this.first_name = first_name;
         this.last_name = last_name;
+        this.biography = biography;
     }
 
     @Override
@@ -45,6 +47,14 @@ public class Author_Details {
 //    public void setAuthor_id(long author_id) {
 //        this.author_id = author_id;
 //    }
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
+    }
 
     public String getFirst_name() {
         return first_name;
