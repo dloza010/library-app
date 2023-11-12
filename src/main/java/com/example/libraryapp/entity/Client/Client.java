@@ -1,7 +1,9 @@
 package com.example.libraryapp.entity.Client;
 
+import com.example.libraryapp.repositories.ClientRepository;
 import jakarta.persistence.*;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Objects;
 
