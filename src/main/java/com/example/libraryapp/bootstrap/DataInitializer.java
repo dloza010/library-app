@@ -16,6 +16,7 @@ import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,13 +47,13 @@ public class DataInitializer implements CommandLineRunner {
     private Ratings_Repository ratingsRepository;
     private List<Books_Owned> booksOwnedList;
     private List<WishList> wishList;
-    private Wishlist_Repository wishlistRepository;
+    private WishListRepository wishlistRepository;
 
     public DataInitializer(ClientRepository clientRepository, Book_Details_Repository bookRepository, PublisherRepository publisherRepository,
                            Book_Author_Intermediate_Repository bookAuthorIntermediateRepository, Author_Details_Repository authorDetailsRepository,
                            Shopping_Cart_Repository shoppingCartRepository, Cart_Item_Repository cartItemRepository,
                            Books_Owned_Repository booksOwnedRepository, Comments_Repository commentsRepository, Ratings_Repository ratingsRepository,
-                           Wishlist_Repository wishlistRepository){
+                           WishListRepository wishlistRepository){
         this.clientRepository = clientRepository;
         this.bookRepository = bookRepository;
         this.publisherRepository = publisherRepository;
@@ -172,7 +173,7 @@ public class DataInitializer implements CommandLineRunner {
             ClientRepository clientRepository,
             Book_Details_Repository bookRepository,
             List<WishList> wishlists,
-            Wishlist_Repository wishlist
+            WishListRepository wishlist
     ){
         Faker faker = new Faker();
 
