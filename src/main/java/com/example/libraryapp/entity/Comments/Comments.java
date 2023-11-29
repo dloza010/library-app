@@ -15,11 +15,11 @@ public class Comments {
     private long comment_id;
 
     @ManyToOne()
-    @JoinColumn(name="userId")
+    @JoinColumn(name="user_id", referencedColumnName = "id")
     private Client client;
 
     @ManyToOne()
-    @JoinColumn(name="bookId")
+    @JoinColumn(name="book_id", referencedColumnName = "ISBN")
     private Book_Details book_details;
 
     private String comment;

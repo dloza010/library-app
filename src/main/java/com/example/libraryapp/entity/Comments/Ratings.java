@@ -14,11 +14,11 @@ public class Ratings {
     private long rating_id;
 
     @ManyToOne()
-    @JoinColumn(name="user_id")
+    @JoinColumn(name="userId", referencedColumnName = "id")
     private Client client;
 
     @ManyToOne()
-    @JoinColumn(name="ISBN")
+    @JoinColumn(name="bookId", referencedColumnName = "ISBN")
     private Book_Details book_details;
 
     private int rating;
