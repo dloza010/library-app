@@ -25,8 +25,8 @@ public interface Book_Details_Repository extends JpaRepository<Book_Details, Lon
 //
     ///return all book details by ISBN
 
-
-
+    @Query(value = "SELECT * FROM Book_Details ORDER BY RANDOM() LIMIT 1", nativeQuery = true)
+    Book_Details findRandomBook();
 
 
 

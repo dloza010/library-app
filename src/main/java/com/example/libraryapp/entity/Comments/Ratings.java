@@ -1,17 +1,16 @@
 package com.example.libraryapp.entity.Comments;
 
 import com.example.libraryapp.entity.Book.Book_Details;
-import com.example.libraryapp.entity.Client.Books_Owned;
 import com.example.libraryapp.entity.Client.Client;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 public class Ratings {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long rating_id;
 
     @ManyToOne()
@@ -26,16 +25,16 @@ public class Ratings {
 
     @CreationTimestamp
     @Column(name="timestamp", nullable = false, updatable = false, insertable = false)
-    private Timestamp timestamp;
+    private String timestamp;
 
     public Ratings() {
     }
 
-    public Ratings(long rating_id, Client client, Book_Details book_details, int rating) {
-        this.rating_id = rating_id;
+    public Ratings(Client client, Book_Details book_details, int rating, String timestamp) {
         this.client = client;
         this.book_details = book_details;
         this.rating = rating;
+        this.timestamp = timestamp;
     }
 
     @Override
@@ -79,7 +78,7 @@ public class Ratings {
         this.rating = rating;
     }
 
-    public Timestamp getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 

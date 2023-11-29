@@ -1,18 +1,17 @@
 package com.example.libraryapp.entity.Comments;
 
 import com.example.libraryapp.entity.Book.Book_Details;
-import com.example.libraryapp.entity.Client.Books_Owned;
 import com.example.libraryapp.entity.Client.Client;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity
 public class Comments {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long comment_id;
 
     @ManyToOne()
@@ -26,15 +25,15 @@ public class Comments {
     private String comment;
 
     @CreationTimestamp
-    @Column(name="timestamp", nullable = false, updatable = false, insertable = false)
-    private Timestamp timestamp;
+    @Column(name="timestamp", updatable = false, insertable = false)
+    private String timestamp;
 
     public Comments() {
     }
 
-    public Comments(long comment_id, Client client, Book_Details book_details, String comment) {
-        this.comment_id = comment_id;
+    public Comments(Client client, String timestamp, Book_Details book_details, String comment) {
         this.client = client;
+        this.timestamp = timestamp;
         this.book_details = book_details;
         this.comment = comment;
     }
@@ -80,7 +79,7 @@ public class Comments {
         this.comment = comment;
     }
 
-    public Timestamp getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 

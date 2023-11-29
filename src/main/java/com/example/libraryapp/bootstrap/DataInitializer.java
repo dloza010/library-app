@@ -40,9 +40,9 @@ public class DataInitializer implements CommandLineRunner {
     private List<Shopping_Cart> shoppingCartsList;
     private Shopping_Cart_Repository shoppingCartRepository;
     private Books_Owned_Repository booksOwnedRepository;
-    private List<Comments> commentsList;
+    private List<Comments> commentsList = new ArrayList<>();
     private Comments_Repository commentsRepository;
-    private List<Ratings> ratingsList;
+    private List<Ratings> ratingsList = new ArrayList<>();
     private Ratings_Repository ratingsRepository;
     private List<Books_Owned> booksOwnedList;
     private List<WishList> wishList;
@@ -76,8 +76,74 @@ public class DataInitializer implements CommandLineRunner {
 
         //the below seeders are not yet implemented
         booksOwnedSeeder(this.clientRepository,this.bookRepository,this.commentsRepository,this.ratingsRepository,this.booksOwnedList,this.booksOwnedRepository);
-        commentsSeeder(2,this.clientRepository,this.bookRepository,this.booksOwnedRepository,this.commentsList,this.commentsRepository,this.ratingsList,this.ratingsRepository);
+        commentsSeeder(
+                5,
+                this.commentsRepository,
+                this.bookRepository,
+                this.clientRepository,
+                this.commentsList
+        );
+        ratingsSeeder(
+                5,
+                this.ratingsRepository,
+                this.bookRepository,
+                this.clientRepository,
+                this.ratingsList
+        );
         wishlistSeeder(3,this.clientRepository,this.bookRepository,this.wishList,this.wishlistRepository);
+    }
+    private static void ratingsSeeder(
+            int ratingsAmount,
+            Ratings_Repository ratingsRepository,
+            Book_Details_Repository bookRepository,
+            ClientRepository clientRepository,
+            List<Ratings> ratingsList
+    ) {
+
+        Faker faker = new Faker();
+
+        List<Book_Details> books = bookRepository.findAll();
+        List<Client> clients = clientRepository.findAll();
+        Book_Details rndBook = books.get(0);
+        Client rndClient = clients.get(0);
+
+        for (int i = 0; i < ratingsAmount; i++) {
+
+            int rating = faker.number().numberBetween(1, 10);
+            String timestamp = faker.date().toString();
+
+            Ratings newRating = new Ratings(rndClient, rndBook, rating, timestamp);
+            ratingsList.add(newRating);
+        }
+
+        ratingsRepository.saveAll(ratingsList);
+    }
+
+    private static void commentsSeeder(
+            int commentAmount,
+            Comments_Repository commentsRepository,
+            Book_Details_Repository bookRepository,
+            ClientRepository clientRepository,
+            List<Comments> commentsList
+    ) {
+
+        Faker faker = new Faker();
+
+        List<Book_Details> books = bookRepository.findAll();
+        List<Client> clients = clientRepository.findAll();
+        Book_Details rndBook = books.get(0);
+        Client rndClient = clients.get(0);
+
+        for (int i = 0; i < commentAmount; i++) {
+
+            String comments = faker.lorem().toString();
+            String timestamp = faker.date().toString();
+
+            Comments comment = new Comments(rndClient, timestamp, rndBook, comments);
+            commentsList.add(comment);
+        }
+
+        commentsRepository.saveAll(commentsList);
     }
 
     private void clientSeeder(
@@ -178,28 +244,6 @@ public class DataInitializer implements CommandLineRunner {
 
         for (long i = 0; i < clientRepository.count(); i++){
             Client client = clientRepository.getReferenceById(i+1);
-
-
-
-        }
-
-        //clientRepository.saveAll(clientList);
-    }
-
-    private static void commentsSeeder(
-            //number of comments for each person
-            int numOfComments,
-            ClientRepository clientRepository,
-            Book_Details_Repository bookRepository,
-            Books_Owned_Repository booksOwnedRepository,
-            List<Comments> comments,
-            Comments_Repository commentsRepository,
-            List<Ratings> ratings,
-            Ratings_Repository ratingsRepository
-    ){
-        Faker faker = new Faker();
-
-        for (int i = 0; i < clientRepository.count(); i++){
 
 
 
