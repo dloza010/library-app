@@ -40,7 +40,7 @@ public class RatingController {
     public ResponseEntity<?> commentBook(@RequestBody Comments comments) {
         Comments savedComment = commentsRepository.save(comments);
 
-        return new ResponseEntity<>(savedComment, HttpStatus.OK);
+        return new ResponseEntity<>(comments.getBook_details(), HttpStatus.OK);
     }
 
     @GetMapping("/comments/{bookId}")
