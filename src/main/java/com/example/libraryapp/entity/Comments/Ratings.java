@@ -2,13 +2,16 @@ package com.example.libraryapp.entity.Comments;
 
 import com.example.libraryapp.entity.Book.Book_Details;
 import com.example.libraryapp.entity.Client.Client;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-public class Ratings {
+public class Ratings implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long rating_id;
@@ -18,7 +21,7 @@ public class Ratings {
     private Client client;
 
     @ManyToOne()
-    @JoinColumn(name="bookId", referencedColumnName = "ISBN")
+    @JoinColumn(name="ISBN", referencedColumnName = "ISBN")
     private Book_Details book_details;
 
     private int rating;

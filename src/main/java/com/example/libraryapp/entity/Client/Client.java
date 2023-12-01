@@ -5,11 +5,12 @@ import jakarta.persistence.*;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
 @Entity
-public class Client {
+public class Client implements Serializable {
 
     //INSTANCE VARIABLES
     @Id

@@ -136,7 +136,7 @@ public class DataInitializer implements CommandLineRunner {
 
         for (int i = 0; i < commentAmount; i++) {
 
-            String comments = faker.lorem().toString();
+            String comments = faker.lorem().sentence();
             String timestamp = faker.date().toString();
 
             Comments comment = new Comments(rndClient, timestamp, rndBook, comments);
